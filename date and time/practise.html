@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 310px;
+            height: 100px;
+            background: #ddd;
+            position: absolute;
+            /* top: -25%; */
+            display: block;
+
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">click me</button>
+    <h1>just random header</h1>
+    <div id="div1">hello i am div if you click anywhere i will disappar</div>
+    <script>
+        // window.onload = function(){
+        //     let hidediv = document.getElementById("div1");
+        //     document.onclick = function(div){
+        //         if(! div.target.id == "div1"){
+        //             hidediv.style.display = "none"
+        //         }
+        //     }
+        // }
+        // document.querySelector("body").addEventListener("click", ()=>{
+        //     // if(document.querySelector("#div1").style.display == "block"){
+        //         document.querySelector("#div1").style.display = "none"
+        //     // }
+        //     // alert("works")
+        // })
+        let div1 = document.querySelector("#div1")
+
+        // let btn = document.querySelector("#btn");
+        // btn.addEventListener("click", function(){
+        //     div1.style.top = "10%"
+        // })
+        window.addEventListener("click", function(e){
+            if(e.target !== div1){
+                div1.style.display = "none"
+            }
+        })
+    </script>
+</body>
+</html>

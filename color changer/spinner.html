@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #div{
+            width: 25vw;
+            height: 25vh;
+            border: 1px solid black;
+            /* animation-name: henry; */
+            animation-duration: 4s;
+            /* animation-timing-function: ease-in-out; */
+            /* position: absolute; */
+            left: -400px;
+            /* display: none; */
+        }
+        #diva{
+            width: 25vw;
+            height: 25vh;
+            border: 1px solid black;
+            /* animation-name: henry; */
+            animation-duration: 4s;
+            /* animation-timing-function: ease-in-out; */
+            position: absolute;
+            top: 50vh;
+            left: -8000px;
+            /* animation-delay: 2s; */
+        }
+        /* @keyframes kelvin {
+            0%{
+                background-color: #add8e6;
+            }
+            60%{
+                background-color: lightblue;
+                left: 50vw;
+            }
+            100%{
+                background-color: lightblue;
+                left: 10vw;
+            }
+        } */
+        @keyframes henry {
+            /* from{}
+            to{
+                background-color: lightblue;
+                margin-left: 50vw;
+            } */
+            0%{
+                background-color: lightblue;
+                left: -400px;
+            }
+            60%{
+                background-color: lightblue;
+                left: 50vw;
+            }
+            100%{
+                background-color: lightblue;
+                left: 10vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="button">click</button>
+    <div id="div"></div>
+    <div id="diva"></div>
+    <script>
+        let btn = document.getElementById("button");
+        let div = document.getElementById("div");
+        document.getElementById("button").addEventListener("click", ()=>{
+            document.getElementById("div").style.animationName = "henry";
+            document.getElementById("div").style.display = "block"; 
+            document.getElementById("div").style.left = "10vw"
+            document.getElementById("diva").style.animationName = "henry"; 
+            document.getElementById("diva").style.left = "10vw" 
+
+        })
+        window.addEventListener("click", function(e){
+            if (e.target === div){
+                div.style.display = "none"
+            }
+        })
+    </script>
+</body>
+</html>

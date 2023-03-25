@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #wrapper{
+            border: 1px solid black;
+            width: 50vw;
+            height: 50vh;
+            margin: 0 auto;
+            margin-top: 30vh;
+            font-family: sans-serif;
+            text-align: center;
+            line-height: 15vh;
+            background-color: grey;
+            border-radius: 20%;
+            font-size: 5vw;
+        }
+        button{
+            height: 10vh;
+            width: 10vw;
+            cursor: pointer;
+            border-radius: 20%;
+            font-weight: 900;
+            font-size: 1vw;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <span id="write"></span><span id="time"></span><br>
+        <div id="div"></div>
+        <button id="span">hold down to toggle</button>
+    </div>
+    <script>
+        function henry (){
+        let date = new Date()
+        let days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
+        let day = days[date.getDay()]
+        let months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+        let month = months[date.getMonth()]
+        let numb = date.getDate()
+        let year = date.getFullYear()
+        let hour = date.getHours()
+        
+        let sec = date.getSeconds()
+        let min = date.getMinutes()
+        if(min < 10){
+            min = `0${min}`
+        }
+        if(sec < 10){
+            
+            sec = `0${sec}`
+        }
+        let time ={
+            hour: hour,
+            min : min,
+            sec: sec,
+            meri : ''
+        }
+        
+       document.getElementById("div").innerHTML = day + "/" + month + "/" + year
+        
+        localStorage.setItem("timer", JSON.stringify(time))
+        // document.getElementById("write").innerHTML = hour + " : " + min + " : " + sec
+      
+        }
+        let timer = setInterval(henry, 1000)
+        let btn = document.getElementById("span")
+        btn.addEventListener("click", ()=>{
+        clearInterval(timer)
+        let gettime = JSON.parse(localStorage.getItem("timer"))
+        if(gettime){
+            let meri = gettime.hour < 12 ? "AM" : "PM"
+            if(gettime.hour > 12){
+            let update = {
+                hour : gettime.hour - 12,
+                min : gettime.min,
+                sec: gettime.sec,
+                meri : meri
+            }
+            localStorage.setItem("timer", JSON.stringify(update))
+        
+        }
+        }
+       })
+       
+       setInterval(()=>{
+            let gettime = JSON.parse(localStorage.getItem("timer"))
+            // console.log(gettime);
+            if(gettime){
+                document.getElementById("write").innerHTML = gettime.hour + " : " + gettime.min + " : " + gettime.sec + " " + gettime.meri
+               
+            }
+       },1000)
+      
+
+           
+    
+
+     
+    
+        
+      
+       
+    </script>
+</body>
+</html>

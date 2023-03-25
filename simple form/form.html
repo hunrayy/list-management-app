@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+            width: 30vw;
+            height: 20vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="con">
+       <fieldset>
+        <legend>simple form</legend>
+        <form action="#">
+            <input type="text" id="name" placeholder="enter your name"><br>
+            <input type="email" id="email" placeholder="enter your email"><br>
+            <input type="password" id="password" placeholder="password"><br>
+            <button onClick="outputName()">submit</button> <button type ="reset">reset</button>
+        </form>
+       </fieldset>
+       <span id="output"></span>
+    </div>
+    <script>
+        let users = [];
+        console.log(users)
+        function outputName(){
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            // console.log(name, email, password);
+
+            // let user = {
+            //     name: name,
+            //     email: email,
+            //     password: password,
+            // }
+
+            // users.push(user)
+            // console.log(users);
+            // console.log(users[0].email);
+
+            document.getElementById("output").innerHTML = "your name is " + name + "<br>" + " your email is " + email +"<br>" + "while your password is " + password 
+            // document.getElementById("output").innerHTML = users;
+
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+        }
+        
+    </script>
+</body>
+</html>

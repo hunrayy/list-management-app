@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .list{
+            background-color: lightsalmon;
+            color: white;
+            width: 15vw;
+            height: 8vh;
+            /* border: 1px solid black; */
+            border-radius: 20px;
+            font-size: 1.5vw;
+            text-align: center;
+            align-content: center;
+            line-height: 6vh;
+            /* animation-name: animate; */
+            animation-duration: 3s;
+            /* animation-timing-function: ease-in-out; */
+            position: absolute;
+            /* left: -60vw; */
+            cursor: pointer;
+        }
+        
+       
+        #l1{
+            top: 0vw;
+            left: -1000px;
+            /* animation-name: l1; */
+        }
+        @keyframes l1 {
+            0%{
+                left: -1000px;
+            }
+            30%{
+                left: 4vw;
+            }
+            100%{
+                left: 0vw;
+            }
+        }
+        #l2{
+            /* animation-delay: .1s; */
+            top: 4vw;
+            left: -1500px;
+            /* animation-name: l2; */
+        }
+        @keyframes l2 {
+            0%{
+                left: -1500px;
+            }
+            40%{
+                left: 4vw;
+            }
+            100%{
+                left: 0vw;
+            }
+        }
+        #l3{
+            /* animation-delay: .3s; */
+            top: 8vw;
+            left: -2000px;
+            /* animation-name: l3; */
+        }
+        @keyframes l3 {
+            0%{
+                left: -2000px;
+            }
+            50%{
+                left: 4vw;
+            }
+            100%{
+                left: 0vw;
+            }
+        }
+        #l4{
+            /* animation-delay: .5s; */
+            top: 12vw;
+            left: -2500px;
+            /* animation-name: l4; */
+        }
+        @keyframes l4 {
+            0%{
+                left: -2500px;
+            }
+            60%{
+                left: 4vw;
+            }
+            100%{
+                left: 0vw;
+            }
+        }
+        #l5{
+            /* animation-delay: .7s; */
+            left: -3000px;
+            top: 16vw;
+            /* animation-name: l5; */
+        }
+        @keyframes l5 {
+            0%{
+                left: -3000px;
+            }
+            70%{
+                left: 4vw;
+            }
+            100%{
+                left: 0vw;
+            }
+        }
+        #l6{
+            /* animation-delay: .9s; */
+            top: 20vw;
+            left: -3500px;
+            /* animation-name: l6; */
+        }
+        @keyframes l6 {
+            0%{
+                left: -3500px;
+            }
+            80%{
+                left: 4vw;
+            }
+            100%{
+                left: 0vw;
+            }
+        }
+        #l7{
+            /* animation-delay: 1100ms; */
+            top: 24vw;
+            left: -4000px;
+            /* animation-name: l7; */
+        }
+        @keyframes l7 {
+            0%{
+                left: -4000px;
+            }
+            90%{
+                left: 4vw;
+            }
+            100%{
+                left: 0vw;
+            }
+        }
+        
+        
+
+
+        p{
+            font-size: 3vw;
+            text-align: center;
+            margin-top: 20vh;
+            font-family: cursive;
+
+        }
+        .circle{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 1px solid black;
+            text-align: center;
+            position: absolute;
+            /* background-color: red; */
+            /* animation-name: colors; */
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+        }
+        @keyframes colors{
+            0%{
+                background-color: red;
+                width: 100px;
+                height: 100px;
+            }
+            25%{
+                background-color: blue;
+                width: 120px;
+                height: 120px;
+            }
+            50%{
+                background-color: green;
+                width: 140px;
+                height: 140px;
+            }
+            75%{
+                background-color: lightsalmon;
+                width: 120px;
+                height: 120px;
+            }
+            100%{
+                background-color: red;
+                width: 100px;
+                height: 100px;
+            }
+        }
+        #one{
+            top: 40vh;
+            left: 30vw;
+            background-color: red;
+        }
+        #two{
+            top: 40vh;
+            left: 38vw;
+            animation-delay: .4s;
+            background-color: blue;
+        }
+        #three{
+            top: 40vh;
+            left: 46vw;
+            animation-delay: 0.8s;
+            background-color: green;
+        }
+        #four{
+            top: 40vh;
+            left: 54vw;
+            animation-delay: 1.2s;
+            background-color: lightsalmon;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+
+        <!-- html code for the menu bar created -->
+        <button id="menubar">my menu bar</button>
+        <div id="container">
+            <div class="list" id="l1">home</div>
+            <div class="list" id="l2">service</div>
+            <div class="list" id="l3">about</div>
+            <div class="list" id="l4">contact</div>
+            <div class="list" id="l5">quick links</div>
+            <div class="list" id="l6">faq</div>
+            <div class="list" id="l7">feed back</div>
+        </div>
+
+
+        <!-- html code for the color changing effect on animation -->
+        <p id="text"> </p>
+        <div class="circle" id="one"></div>
+        <div class="circle" id="two"></div>
+        <div class="circle" id="three"></div>
+        <div class="circle" id="four"></div>
+    </div>
+
+
+
+    <script>
+        //setting the function of the body changing background color, not just on click
+        // but till the animation effect reaches it
+        let colors = ["red", "blue", "green", "lightSalmon"];
+        let quotes = [
+            "what fun is life without colors?",
+            "life is but an illusion when colors get involved",
+            "All about colors: think it, feel it, color it",
+            "I see the world as a rainbow with just colors everywhere"
+        ]
+    let quote_changer = Math.floor(Math.random() * 4);
+    if (quote_changer == 0){
+                document.getElementById("text").innerHTML = quotes[0]
+            }else if(quote_changer == 1){
+                document.getElementById("text").innerHTML = quotes[1]
+            }
+            else if(quote_changer == 2){
+                document.getElementById("text").innerHTML = quotes[2]
+            }
+            else{
+                document.getElementById("text").innerHTML = quotes[3]
+            }
+        function change1(){
+            document.getElementsByTagName("body")[0].style.backgroundColor = colors[0]
+            document.getElementById("text").style.color = "black";
+            
+        }
+        function change2(){
+            document.getElementsByTagName("body")[0].style.backgroundColor = colors[1]
+            document.getElementById("text").style.color = "darkturquoise"
+            
+        }
+        function change3(){
+            document.getElementsByTagName("body")[0].style.backgroundColor = colors[2]
+            document.getElementById("text").style.color = "chartreuse"
+            
+        }
+        function change4(){
+            document.getElementsByTagName("body")[0].style.backgroundColor = colors[3]
+            document.getElementById("text").style.color = "white"
+          
+        }
+        function refresh(){
+            location.reload()
+        }
+
+
+        //working on the "onclick" event for the first button of the color changer
+
+        document.getElementById("one").addEventListener("click", ()=>{
+            // document.getElementsByTagName("body")[0].style.backgroundColor = "red"
+            document.getElementsByTagName("div")[12].style.animationName = "colors";
+            document.getElementsByTagName("div")[9].style.animationName = "colors";
+            document.getElementsByTagName("div")[10].style.animationName = "colors";
+            document.getElementsByTagName("div")[11].style.animationName = "colors";
+            localStorage.setItem("color_changer", "red")
+            localStorage.setItem("text_color", "black")
+            localStorage.setItem("quotes", quote_changer)
+            setTimeout(change1,200)
+            // window.location.reload()
+            // setTimeout(refresh(), 2000)
+            setInterval(() => {
+                location.reload()
+            }, 2000);
+        })
+        
+
+        //working on the "onclick" event for the second button of the color changer
+
+        document.getElementById("two").addEventListener("click", ()=>{           
+            // document.getElementsByTagName("body")[0].style.backgroundColor = "blue"
+            document.getElementsByTagName("div")[12].style.animationName = "colors";
+            document.getElementsByTagName("div")[9].style.animationName = "colors";
+            document.getElementsByTagName("div")[10].style.animationName = "colors";
+            document.getElementsByTagName("div")[11].style.animationName = "colors";
+            localStorage.setItem("color_changer", "blue")
+            localStorage.setItem("text_color", "darkturquoise")
+            localStorage.setItem("quotes", quote_changer)
+            setTimeout(change2, 500)
+            // setTimeout(refresh(), 2000)
+            setInterval(() => {
+                location.reload()
+            }, 2000);
+        })
+
+
+        //working on the "onclick" event for the third button of the color changer
+
+        document.getElementById("three").addEventListener("click", ()=>{           
+            // document.getElementsByTagName("body")[0].style.backgroundColor = "green"
+            document.getElementsByTagName("div")[12].style.animationName = "colors";
+            document.getElementsByTagName("div")[9].style.animationName = "colors";
+            document.getElementsByTagName("div")[10].style.animationName = "colors";
+            document.getElementsByTagName("div")[11].style.animationName = "colors";
+            localStorage.setItem("color_changer", "green")
+            localStorage.setItem("text_color", "chartreuse")
+            localStorage.setItem("quotes", quote_changer)
+            setTimeout(change3, 1000)
+            // setTimeout(refresh(), 2000)
+            setInterval(() => {
+                location.reload()
+            }, 2000);
+        })
+
+
+        //working on the "onclick" event for the fourth button of the color changer
+
+        document.getElementById("four").addEventListener("click", ()=>{            
+            // document.getElementsByTagName("body")[0].style.backgroundColor = "lightSalmon"
+            document.getElementsByTagName("div")[12].style.animationName = "colors";
+            document.getElementsByTagName("div")[9].style.animationName = "colors";
+            document.getElementsByTagName("div")[10].style.animationName = "colors";
+            document.getElementsByTagName("div")[11].style.animationName = "colors";
+            localStorage.setItem("color_changer", "lightSalmon")
+            localStorage.setItem("text_color", "white")
+            localStorage.setItem("quotes", quote_changer)
+            setTimeout(change4, 1500)
+            // setTimeout(refresh(), 2000)
+            setInterval(() => {
+                location.reload()
+            }, 2000);
+        })
+
+
+        //finally!!!, working on the persistence of the current color on the page and
+        // that of the text as well
+        // let persist = localStorage.getItem("color_channger");
+        window.onload =()=>{
+            let persist = localStorage.getItem("color_changer");
+            let text_color = localStorage.getItem("text_color");
+            let quote_changer = localStorage.getItem("quotes")
+            if (quote_changer == 0){
+                document.getElementById("text").innerHTML = quotes[0]
+            }else if(quote_changer == 1){
+                document.getElementById("text").innerHTML = quotes[1]
+            }
+            else if(quote_changer == 2){
+                document.getElementById("text").innerHTML = quotes[2]
+            }
+            else{
+                document.getElementById("text").innerHTML = quotes[3]
+            }
+            document.getElementsByTagName("body")[0].style.backgroundColor = persist
+            document.getElementById("text").style.color = text_color
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        document.getElementById("menubar").addEventListener("click", ()=>{
+            document.getElementById("l1").style.animationName = "l1"
+            // document.getElementById("l1").style.left = "25vw"
+            // if(document.getElementById("l1").style.left = "-60vw" ){
+            // document.getElementById("l1").style.left = "0vw"
+            // }
+            document.getElementById("l1").style.left = "0vw"
+
+            document.getElementById("l2").style.animationName = "l2"
+            // if(document.getElementById("l2").style.left = "-60vw" ){
+            document.getElementById("l2").style.left = "0vw"
+            // }
+
+            document.getElementById("l3").style.animationName = "l3"
+            // document.getElementById("l3").style.left = "25vw"
+            // if(document.getElementById("l3").style.left = "-60vw" ){
+            document.getElementById("l3").style.left = "0vw"
+            // }
+
+            document.getElementById("l4").style.animationName = "l4"
+            // document.getElementById("l4").style.left = "25vw"
+            // if(document.getElementById("l4").style.left = "-60vw" ){
+            document.getElementById("l4").style.left = "0vw"
+            // }
+
+            document.getElementById("l5").style.animationName = "l5"
+            // document.getElementById("l5").style.left = "25vw"
+            // if(document.getElementById("l5").style.left = "-60vw" ){
+            document.getElementById("l5").style.left = "0vw"
+            // }
+
+            document.getElementById("l6").style.animationName = "l6"
+            // document.getElementById("l6").style.left = "25vw"
+            // if(document.getElementById("l6").style.left = "-60vw" ){
+            document.getElementById("l6").style.left = "0vw"
+            // }
+
+            document.getElementById("l7").style.animationName = "l7"
+            // document.getElementById("l7").style.left = "25vw"
+            // if(document.getElementById("l7").style.left = "-60vw" ){
+            document.getElementById("l7").style.left = "0vw"
+            // }
+        })
+    </script>
+</body>
+</html>

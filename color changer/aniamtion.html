@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #open{
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            background-color: blue;
+            color: white;
+            width: 15vw;
+            height: 10vh;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+        #mc{
+            position: absolute;
+            top: -25%;
+            left: 40%;
+            background-color: lightsalmon;
+            color: white;
+            color: black;
+            width: 15vw;
+            height: 10vh;
+            font-size: 1.5em;
+            display: flex;
+            justify-content: center;
+            border-radius: 15px;
+            /* animation-name: animate; */
+            animation-duration: .4s;
+            /* display: none; */
+        }
+        body{
+            height: 100vh;
+        }
+        @keyframes animate {
+            from{
+                top: 0px;
+            }
+            to{
+                top: 25%;
+            }
+        }
+        @keyframes henry {
+            from{
+                top: 25%;
+            }
+            to{
+                top: -300px;
+                
+            }
+        }
+        #close{
+            cursor: pointer;
+            height: 20px;
+            font-size: 5vw;
+        }
+        #close:hover{
+            color: red;
+        }
+        /* body{
+            position: relative;
+        } */
+        .new{
+            animation-name: here;
+            /* animation-duration: 40s; */
+            background-color: black;
+        }
+        @keyframes here {
+            0%{
+                top: 25%;
+            }
+            70%{
+                top: 80%;
+            }
+            100%{
+                top: -300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="open">where's our Modal?</div>
+    <div id="mc">
+        <p>Here it is</p>
+        <span id="close">&times</span>
+    </div>
+    <button id="click">click now</button>
+    <script>
+        let op = document.getElementById("open");
+        let close = document.getElementById("close");
+        let mc = document.getElementById("mc");
+        let click = document.getElementById("click");
+        
+        op.onclick = ()=>{
+
+            // mc.style.display = "block"
+            mc.style.animationName = "animate"
+            mc.style.top = "25%"
+        }
+        click.addEventListener("click", ()=>{
+            mc.style.animationName = "henry";
+            mc.style.top= "-25%"
+            // mc.style.animationDuration = "1s";
+            // mc.style.animationDuration ="1s"
+            // mc.style.display = "none"
+            // mc.classList.add(".new")
+
+        })
+        // if(e.target === mc){
+        //     mc.style.display = "none"
+        // }
+
+
+        // let div1 = document.querySelector("#mc")
+        window.addEventListener("click", function(e){
+            if(e.target !== mc){
+                mc.style.display = "none"
+            }
+        })
+        // const open = document.getElementById("open").addEventListener("click", ()=>{
+        //     document.getElementById("mc").style.display = "block"
+        // })
+        // const close = document.getElementById("close").addEventListener("click", ()=>{
+        //     document.getElementById("mc").style.display = "none"
+        // })
+
+
+
+        // let open = document.getElementById("open").onclick = function(){
+        //     document.getElementById("mc").style.display = "block";
+        //     document.getElementById("close").style.display = "block"
+        // }
+    </script>
+</body>
+</html>

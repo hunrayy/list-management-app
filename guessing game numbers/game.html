@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #me{
+            margin-left: 30vw;
+        } */
+        button{
+            margin-left: 45vw;
+            padding: 25px;
+            margin-top: 40vh;
+            font-weight: 900;
+            font-family: sans-serif;
+        }
+        #you{
+            margin-left: 40vw;
+            margin-top: 5vh;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <button><div id="me"></div></button>
+    <div id="you"></div>
+    <script>
+        let num = Math.floor(Math.random() * 100)
+        // console.log(num);
+        document.getElementById("me").innerHTML = num
+        let game = window.prompt("lets play a game, i'll think of a number from to 100, try and guess it")
+        if (game == num){
+            // console.log("wow!!! you got it, i thought of", num);
+            document.getElementById("you").innerHTML = "wow!!! you got it, i thought of", num
+        }else{
+            console.log("wrong, you failed it, i thought of", num)
+            document.getElementById("you").innerHTML = "wrong, you failed it, i thought of", num ;
+        }
+    </script>
+</body>
+</html>

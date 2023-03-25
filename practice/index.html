@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">name</label><br>
+        <input type="name" placeholder="enter your name" id="name"><br>
+        <label for="">email address</label><br>
+        <input type="email" placeholder="enter your email" id="email"><br>
+        <label for="">password</label><br>
+        <input type="password" placeholder="enter your password" id="password"><br>
+        <button id="button" type="button">submit</button>
+    </form>
+    <script>
+        
+        document.getElementById("button").addEventListener("click", ()=>{
+            let users = [];
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            let user_details =
+                        {
+                            name: name,
+                            email: email,
+                            password: password
+                        }
+            if(name == "" && email == "" && password ==""){
+                alert("please fill the form")
+            }
+            else{
+                let check_db = localStorage.getItem("formdata")
+                if(check_db == null){
+
+                    
+                    users.push(user_details)
+                    localStorage.setItem("formdata", JSON.stringify(users))
+                    // JSON.stringify(localStorage.setItem("formdata", user_details));
+                    
+                    console.log(users);
+                }
+                else{
+                    let savedUsers = JSON.parse(check_db)
+                    savedUsers.push(user_details)
+                    localStorage.setItem("formdata", JSON.stringify(savedUsers))
+                } 
+            }
+        })
+        // if (!check_db == null) {
+            //     for(i = 0; i < formdata.length; i++){
+            //         let new_user = [
+            //             {
+            //                 new_name:new_name,
+            //                 new_email: new_email,
+            //                 new_password: new_password
+            //             }
+            //         ]
+            //         users.push(new_user)
+            //         localStorage.setItem("formdata", JSON.stringify(users))
+            //     }
+            // }
+        // let user_details = [
+        //     {
+        //         name: "henry",
+        //         password: "123"
+        //     },
+        //     {
+        //         name: "bolu",
+        //         password: "1234"
+        //     },
+        //     {
+        //         name: "kelvin",
+        //         password: "12345"
+        //     }
+        // ]
+        // let username = prompt("enter your name");
+        // let password = prompt("enter your password");
+        // let rawdata = []
+        // for(i = 0; i < user_details.length; i++){
+        //     if(user_details[i].name == username && user_details[i].password == password){
+        //         rawdata.push(username)
+        //     }
+        //     if(rawdata.length > 0){
+        //         console.log(`credentials were found, your name is ${username} and your password is ${password}`);
+        //     }else{
+        //         console.log("invalid credentials");
+        //     }
+        // }
+    </script>
+</body>
+</html>

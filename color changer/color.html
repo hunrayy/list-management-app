@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div{
+            width: 40vw;
+            height: 40vh;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="div"></div>
+    <button id="red">red</button><button id="blue">blue</button><button id="green">green</button>
+    <script>
+        document.getElementById("red").addEventListener("click", ()=>{
+            document.getElementById("div").style.backgroundColor = "red"
+            localStorage.setItem("color", "red")
+        })
+        document.getElementById("blue").addEventListener("click", ()=>{
+            document.getElementById("div").style.backgroundColor = "blue"
+            localStorage.setItem("color", "blue")
+
+        })
+        document.getElementById("green").addEventListener("click", ()=>{
+            document.getElementById("div").style.backgroundColor = "green"
+            localStorage.setItem("color", "green")
+            // localStorage.setItem("color", JSON.stringify(green))
+
+        })
+        window.onload =()=>{
+            let you = localStorage.getItem("color");
+            // let check_db = JSON.parse(localStorage.getItem("formdata"))
+            console.log(you);
+            document.getElementById("div").style.backgroundColor = you
+           
+        }
+    </script>
+</body>
+</html>

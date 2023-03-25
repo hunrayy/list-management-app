@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #inputfield{
+            width: 30vw;
+            height: 3vh;
+            border-radius: 20%;
+            border: 3px solid black;
+        }
+        body{
+            background-color: grey;
+        }
+        #wrapper{
+            width: 50vw;
+            height: 10vh;
+            border: 1px solid black;
+            margin: 0 auto;
+            margin-top: 40vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <form action="">
+            <input type="password" placeholder="password" name="password" id="inputfield">
+            <button type="button" id="eye">connect</button>
+        </form>
+        <form action="">
+            <input type="password" placeholder="password" id="password"><button id="see">go</button>
+        </form>
+    </div>
+    <script>
+        let a = document.getElementById("see");
+        a.addEventListener("mousedown",  ()=>{
+            let me = document.getElementById("password");
+            if(password.type == "password"){
+                password.type = "text"
+            }
+        })
+    </script>
+    <script>
+       let icon = document.getElementById("eye");
+       icon.addEventListener("mousedown", ()=>{
+        let inputField = document.getElementById("inputfield");
+        if (inputField.type == "password"){
+            inputField.type = "text";
+        }
+       })
+       icon.addEventListener("mouseup", ()=>{
+        let myInput = document.getElementById("inputfield");
+        if (myInput.type == "text"){
+            myInput.type = "password"
+        }
+       })
+    </script>
+</body>
+</html>

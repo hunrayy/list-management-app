@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span id="div"></span>
+        <span id="seconds"></span>
+        <span id="span"></span>
+    </div>
+    <button id="btn">click</button><button id="btn2">toggle</button>
+    <script>
+        let date = new Date()
+            let hour = date.getHours()
+            if(hour <= 12){
+                    
+                    hour = `0${hour}`
+                }
+        let amPm = "AM"
+        // if()
+        setInterval(() => {
+            let date = new Date()
+            let hour = date.getHours()
+            if(hour <= 12){
+                    
+                    // hour = `0${hour}`
+                }
+            let minute = date.getMinutes()
+            if(minute < 10){
+                    // amPm ="PM"
+                    minute = `0${minute}`
+                }
+            let seconds = date.getSeconds()
+            if(seconds < 10){
+                    // amPm ="PM"
+                    seconds = `0${seconds}`
+                }
+            // let hhh = document.querySelector("#seconds").innerHTML = seconds
+            
+    
+            document.querySelector("#div").innerHTML = `${hour} : ${minute} : ${seconds}`
+
+
+
+            document.querySelector("#btn").addEventListener("click", ()=>{
+                // console.log(seconds);
+                // if(hour.length = 2){
+                //     amPm ="PM"
+                //     // hour = `0${hour - 12}`
+                // }
+                // hour = hour - 12
+                // if (hour = date.getHours()){
+                //     hour = hour - 12
+                // }else{hour = hour + 12}
+                // let amPm = "AM"
+                if(hour > 12){
+                    hour = hour - 12
+                }else if (hour < 12){
+                    hour = hour + 12
+                document.querySelector("div").innerHTML = `${hour} : ${minute} : ${seconds} `
+                }
+                if(hour.length = 1){
+                    // hour = `0${hour}`
+                    if(hour <= 12){
+                       amPm = "PM"
+                    }
+                document.querySelector("div").innerHTML = `${hour} : ${minute} ${amPm} `
+
+                }
+
+            // document.querySelector("#seconds").style.display
+                
+            })
+        }, 1000);
+        // document.querySelector("#div").innerHTML = `${hour} : ${minute} : ${seconds}`
+
+        
+        
+    </script>
+</body>
+</html>

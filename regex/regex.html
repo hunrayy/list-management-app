@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //prompt for username using regex
+        // let fname = prompt("what is your name").trim();
+        // let pattern = /[a-z]{3,}[0-9]{1,}[@, $, &]/i
+        // if(pattern.test(fname)){
+        //     alert("passed");
+        // }else{
+        //     alert("input mismatched");
+        // }
+        //collect user input
+        //check for special characters
+        //check through the length
+        //check for numbers
+        function specialChar(fname){
+            let pattern = /[@, #, $, %, ^, &, *]/;
+            if(pattern.test(fname)){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        function charLength(fname){
+            let spec = specialChar(fname);
+            let fname = prompt("what is your name?")
+        }
+        while(true){
+            let spec = charLength(fname);
+            fname = prompt("what is your name");
+            if(fname == true){
+                alert("name length validated")
+            }
+        }
+        
+    </script>
+</body>
+</html>
